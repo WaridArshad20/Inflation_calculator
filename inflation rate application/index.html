@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Future Value Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Future Value Calculator</h1>
+      <form id="futureValueForm">
+        <label for="amount">Amount (PKR):</label>
+        <input
+          type="number"
+          id="amount"
+          name="amount"
+          required
+          oninput="updateAmountInWords()"
+        />
+        <div id="amountInWords"></div>
+        <span class="error-message" id="amountError"></span>
+
+        <label for="inflationRate">Inflation Rate (%):</label>
+        <input
+          type="number"
+          id="inflationRate"
+          name="inflationRate"
+          step="0.01"
+          required
+        />
+        <span class="error-message" id="inflationRateError"></span>
+
+        <label for="years">Number of Years:</label>
+        <input type="number" id="years" name="years" required />
+        <span class="error-message" id="yearsError"></span>
+
+        <button type="button" onclick="calculateFutureValue()">
+          Calculate
+        </button>
+      </form>
+      <p id="result"></p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
